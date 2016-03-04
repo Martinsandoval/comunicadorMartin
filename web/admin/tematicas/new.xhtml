@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/template.xhtml">
+        <ui:define name="content">
+            
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">X</button>
+                            <h4 class="modal-title" id="myModalLabel">{bundle.agregartematica}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h:form>
+                                <p:outputLabel for="tematica" value="#{bundle.nombretematica}"/>
+                                <p:inputText id="tematica" value="#{backingTematicas.tematica.nombre}" required="true"/>
+                                <h:messages style="font-size: 14px; font-weight: bold; color: #ff0000"/> 
+                            </h:form>
+                        </div>
+                        <div class="modal-footer">
+                            <h:commandButton value="#{bundle.agregar}" action="#{backingTematicas.agregar()}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+<!--            
+            <h:form id="form">
+                <h:outputLabel style="font-weight: bold; font-size: 16px" value="#{bundle.agregartematica}"/>
+                <br></br>
+                <br></br>
+                <p:outputLabel for="tematica" value="#{bundle.nombretematica}"/>
+                <p:inputText id="tematica" value="#{backingTematicas.tematica.nombre}" required="true"/>
+                <br></br>
+                <br></br>
+                <h:commandButton value="#{bundle.agregar}" action="#{backingTematicas.agregar()}"/>
+                <h:messages style="font-size: 14px; font-weight: bold; color: #ff0000"/>
+                <br></br>
+                <br></br>
+
+            </h:form>
+            <h:form id="form2">
+                <h:commandLink value="#{bundle.vertematicas}" action="/admin/tematicas/index.xhtml"/>
+            </h:form>-->
+        </ui:define>
+
+    </ui:composition>
+
+
+</html>
